@@ -1,12 +1,19 @@
 # In-Context Operator Networks (ICON)
 
-This repository contains the code for the following papers:
+This repository contains the code for the following papers. Feel free to star this repository and cite our papers if you find it useful for your research. You can find the citation details below.
 
 ## In-Context Operator Learning with Data Prompts for Differential Equation Problems 
 
-This paper introduces “In-Context Operator Networks (ICON)” to learn operators from the prompted data and apply it to new questions, during the inference stage without any weight update. In the paper we trained a single neural network as a few-shot operator learner for a diversified type of problems, including forward and inverse problems of ODEs, PDEs, and mean-field control problems. We also show that it can generalize its learning capability to operators beyond the training distribution without fine-tuning. 
+This paper aims to answer the following question: Can we build a large model for broad spectrum of scientific machine learning tasks, just as large language models (LLM) like GPT for natural language processing (NLP)?
 
-ICON draws inspiration from the success of large language models (LLM), e.g., GPT, for general natural language processing (NLP) tasks. We believe that it shows a promising direction to build large models for general scientific machine learning tasks.
+Many scientific learning tasks can be seen as operator learning problems, where an operator transforms a "condition" function into a "quantity of interest (QoI)" function. Past attempts have been made to approximate operators with neural networks. However, in these methods, one neural network is limited to approximating one operator, requiring retraining, at least fine-tuning, for even small changes in equations.
+
+In this paper, we made a huge step forward by introducing "In-Context Operator Networks (ICON)". A distinguishing feature of ICON is its ability to learn operators from data prompts, during the inference phase without weight adjustments. In essence, this transformer-based model is trained to act as a generalist operator learner rather than being tuned as a specific operator approximator, so that a single model can tackle a variety of tasks involving diverse operators. 
+
+As an example, in this paper, a single neural network adeptly manages 19 distinct problem types, encompassing forward and inverse ODE, PDE, and mean field control problems, each spanning a continuous spectrum of operators. The learning capability is even generalized to operators beyond the training distribution, without any fine-tuning. 
+
+
+ICON draws inspiration from the success of LLM for general NLP tasks. We believe that it shows a promising direction to build large models for general scientific machine learning tasks.
 
 The paper is published in [*Proceedings of the National Academy of Sciences (PNAS)*](https://www.pnas.org/doi/10.1073/pnas.2310142120). Code are in folder `icon/`. See more details in `icon/README.md`.
 
