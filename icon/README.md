@@ -1,6 +1,6 @@
 # In-Context Operator Networks (ICON)
 
-This repository contains the code associated with the paper titled "In-Context Operator Learning with Prompts for Differential Equation Problems" ([arXiv link](https://arxiv.org/pdf/2304.07993.pdf)).
+This folder contains the code associated with the paper titled ["In-Context Operator Learning with Data Prompts for Differential Equation Problems"](https://www.pnas.org/doi/10.1073/pnas.2310142120) published on *Proceedings of the National Academy of Sciences (PNAS)*.
 
 ## Environment Setup
 
@@ -73,13 +73,16 @@ To generate the figures presented in the paper, run the Python scripts and Jupyt
 To run the analysis successfully, you may need to make modifications to the directory paths and checkpoint time stamps.
 
 ## Reference
-ArXiv: [https://arxiv.org/pdf/2304.07993.pdf](https://arxiv.org/pdf/2304.07993.pdf)
-
+[In-Context Operator Learning with Data Prompts for Differential Equation Problems](https://www.pnas.org/doi/10.1073/pnas.2310142120)
 ```
 @article{yang2023context,
-  title={In-Context Operator Learning with Prompts for Differential Equation Problems},
+  title={In-context operator learning with data prompts for differential equation problems},
   author={Yang, Liu and Liu, Siting and Meng, Tingwei and Osher, Stanley J},
-  journal={arXiv preprint arXiv:2304.07993},
-  year={2023}
+  journal={Proceedings of the National Academy of Sciences},
+  volume={120},
+  number={39},
+  pages={e2310142120},
+  year={2023},
+  publisher={National Acad Sciences}
 }
 ```
