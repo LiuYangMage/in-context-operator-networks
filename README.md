@@ -8,7 +8,7 @@ This paper introduces “In-Context Operator Networks (ICON)” to learn operato
 
 ICON draws inspiration from the success of large language models (LLM), e.g., GPT, for general natural language processing (NLP) tasks. We believe that it shows a promising direction to build large models for general scientific machine learning tasks.
 
-The paper is published on [*Proceedings of the National Academy of Sciences (PNAS)*](https://www.pnas.org/doi/10.1073/pnas.2310142120). Code are in folder `icon/`. See more details in `icon/README.md`.
+The paper is published in [*Proceedings of the National Academy of Sciences (PNAS)*](https://www.pnas.org/doi/10.1073/pnas.2310142120). Code are in folder `icon/`. See more details in `icon/README.md`.
 
 
 

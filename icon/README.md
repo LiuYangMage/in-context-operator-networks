@@ -1,6 +1,6 @@
 # In-Context Operator Networks (ICON)
 
-This folder contains the code associated with the paper titled ["In-Context Operator Learning with Data Prompts for Differential Equation Problems"](https://www.pnas.org/doi/10.1073/pnas.2310142120) published on *Proceedings of the National Academy of Sciences (PNAS)*.
+This folder contains the code associated with the paper titled ["In-Context Operator Learning with Data Prompts for Differential Equation Problems"](https://www.pnas.org/doi/10.1073/pnas.2310142120) published in *Proceedings of the National Academy of Sciences (PNAS)*.
 
 ## Environment Setup
 
