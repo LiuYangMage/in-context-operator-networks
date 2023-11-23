@@ -18,6 +18,17 @@ ICON draws inspiration from the success of LLM for general NLP tasks. We believe
 The paper is published in [*Proceedings of the National Academy of Sciences (PNAS)*](https://www.pnas.org/doi/10.1073/pnas.2310142120). Code are in folder `icon/`. See more details in `icon/README.md`.
 
 
+## Fine-Tune Language Models as Multi-Modal Differential Equation Solvers
+
+We transform the in-context operator learning into a multi-modal framework by introducing "captions" as a means to incorporate human knowledge about the operator, in the form of natural language descriptions and equations.
+
+Moreover, we introduce a novel approach, namely "ICON-LM", to train a language-model-like architecture, or directly fine-tune existing language models, for in-context operator learning. Inspired by "next token prediction" in language models, ICON-LM is trained via "next function prediction". ICON-LM significantly outperforms the vanilla ICON model, in that it achieves better accuracy with about half of the parameters, with less training time and similar memory consumption.
+
+By bridging language models with operator learning and data-driven differential equation solvers, we have not only achieved substantial advancements in this specific domain, but also opened up a new avenue for the application of language models in scientific machine learning, a realm that remains largely under-explored.
+
+See the paper for more details:
+https://arxiv.org/pdf/2308.05061.pdf
+
 
 ## Reference:
 ```
@@ -32,8 +43,8 @@ The paper is published in [*Proceedings of the National Academy of Sciences (PNA
   publisher={National Acad Sciences}
 }
 
-@article{yang2023prompting,
-  title={Prompting In-Context Operator Learning with Sensor Data, Equations, and Natural Language},
+@article{yang2023FineTune,
+  title={Fine-Tune Language Models as Multi-Modal Differential Equation Solvers},
   author={Yang, Liu and Meng, Tingwei and Liu, Siting and Osher, Stanley J},
   journal={arXiv preprint arXiv:2308.05061},
   year={2023}
