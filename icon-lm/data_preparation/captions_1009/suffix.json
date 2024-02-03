@@ -1,0 +1,26 @@
+{
+    "ode_auto_const_forward" : " Condition: $u(0)$ and $c(t), t\\in[0,1]$, QoI: $u(t), t\\in[0,1]$.",
+    "ode_auto_linear1_forward" : " Condition: $u(0)$ and $c(t), t\\in[0,1]$, QoI: $u(t), t\\in[0,1]$.",
+    "ode_auto_linear2_forward" : " Condition: $u(0)$ and $c(t), t\\in[0,1]$, QoI: $u(t), t\\in[0,1]$.",
+
+    "ode_auto_const_inverse" : " Condition: $u(t), t\\in[0,1]$, QoI: $c(t), t\\in[0,1]$.",
+    "ode_auto_linear1_inverse" : " Condition: $u(t), t\\in[0,1]$, QoI: $c(t), t\\in[0,1]$.",
+    "ode_auto_linear2_inverse" : " Condition: $u(t), t\\in[0,1]$, QoI: $c(t), t\\in[0,1]$.",
+
+    "series_damped_oscillator_forward" : " Condition: $u(t), t\\in[0,0.5)$, QoI: $u(t), t\\in[0.5,1]$.",
+    "series_damped_oscillator_inverse" : " Condition: $u(t), t\\in[0.5,1]$, QoI: $u(t), t\\in[0,0.5)$.",
+
+    "pde_poisson_spatial_forward" : " Condition: $c(x), x\\in[0,1]$, QoI: $u(x), x\\in[0,1]$.",
+    "pde_porous_spatial_forward" : " Condition: $c(x), x\\in[0,1]$, QoI: $u(x), x\\in[0,1]$.",
+    "pde_cubic_spatial_forward" : " Condition: $c(x), x\\in[0,1]$, QoI: $u(x), x\\in[0,1]$.",
+
+    "pde_poisson_spatial_inverse" : " Condition: $u(x), x\\in[0,1]$, QoI: $c(x), x\\in[0,1]$.",
+    "pde_porous_spatial_inverse" : " Condition: $u(x), x\\in[0,1]$, QoI: $c(x), x\\in[0,1]$.",
+    "pde_cubic_spatial_inverse" : " Condition: $u(x), x\\in[0,1]$, QoI: $c(x), x\\in[0,1]$.",
+
+    "mfc_gparam_hj_forward11" : " Condition: $\\rho(0,x), x\\in[0,1]$, QoI: $\\rho(1,x), x\\in[0,1]$.",
+    "mfc_gparam_hj_forward12" : " Condition: $\\rho(0,x), x\\in[0,1]$, QoI: $\\rho(t,x), t\\in[0.5,1], x\\in[0,1]$.",
+    "mfc_gparam_hj_forward22" : " Condition: $\\rho(t,x), t\\in[0,0.5), x\\in[0,1]$, QoI: $\\rho(t,x), t\\in[0.5,1], x\\in[0,1]$.",
+    "mfc_rhoparam_hj_forward11" : " Condition: $g(x), x\\in[0,1]$, QoI: $rho(1,x), x\\in[0,1]$.",
+    "mfc_rhoparam_hj_forward12" : " Condition: $g(x), x\\in[0,1]$, QoI: $rho(t,x), t\\in[0.5,1], x\\in[0,1]$."
+}

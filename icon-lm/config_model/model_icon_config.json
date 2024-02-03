@@ -1,0 +1,6 @@
+{
+  "demo_max_num": 5,
+  "encoder": {"num_heads":8, "num_layers":6, "model_size":256, "QK_size":256, "V_size":256, "widening_factor": 4, "initializer": "glorot_uniform"},
+  "decoder": {"num_heads":8, "num_layers":6, "model_size":256, "QK_size":256, "V_size":256, "widening_factor": 4, "initializer": "glorot_uniform"},
+  "out_size": 1
+}

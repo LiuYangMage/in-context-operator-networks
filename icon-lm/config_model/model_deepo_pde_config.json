@@ -1,0 +1,8 @@
+{
+  "in_dim": 101,
+  "hidden_dim": 1024,
+  "emb_dim": 1024,
+  "hidden_layers": 6,
+  "query_idx_start": 2,
+  "query_idx_end": 3
+}

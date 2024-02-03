@@ -1,0 +1,18 @@
+{
+  "demo_id_dim": 4,
+  "demo_max_num": 6,
+  "index_mode": "learn",
+  "caption_len": 300,
+  "caption_feature": "embedding",
+  "caption_vocab_size": 30516,
+  "transformer": {"n_layers":6,
+                  "n_heads":8, 
+                  "head_dim":256, 
+                  "model_dim":256, 
+                  "dropout_rate":0, 
+                  "widening_factor": 4, 
+                  "kernel_init": "glorot_uniform", 
+                  "attention_fn": "vanilla"
+                },
+  "out_dim": 1
+}
