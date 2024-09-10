@@ -39,20 +39,21 @@ def inputdata_transform(func, data):
   '''
   apply func to each dataclass field
   '''
+  func_wrapper = lambda x: x if x is None else func(x)
   return InputData(
-    input_id = func(data.input_id),
-    embedding_mask = func(data.embedding_mask),
-    demo_cond_k = func(data.demo_cond_k),
-    demo_cond_v = func(data.demo_cond_v),
-    demo_cond_mask = func(data.demo_cond_mask),
-    demo_qoi_k = func(data.demo_qoi_k),
-    demo_qoi_v = func(data.demo_qoi_v),
-    demo_qoi_mask = func(data.demo_qoi_mask),
-    quest_cond_k = func(data.quest_cond_k),
-    quest_cond_v = func(data.quest_cond_v),
-    quest_cond_mask = func(data.quest_cond_mask),
-    quest_qoi_k = func(data.quest_qoi_k),
-    quest_qoi_mask = func(data.quest_qoi_mask),
+    input_id = func_wrapper(data.input_id),
+    embedding_mask = func_wrapper(data.embedding_mask),
+    demo_cond_k = func_wrapper(data.demo_cond_k),
+    demo_cond_v = func_wrapper(data.demo_cond_v),
+    demo_cond_mask = func_wrapper(data.demo_cond_mask),
+    demo_qoi_k = func_wrapper(data.demo_qoi_k),
+    demo_qoi_v = func_wrapper(data.demo_qoi_v),
+    demo_qoi_mask = func_wrapper(data.demo_qoi_mask),
+    quest_cond_k = func_wrapper(data.quest_cond_k),
+    quest_cond_v = func_wrapper(data.quest_cond_v),
+    quest_cond_mask = func_wrapper(data.quest_cond_mask),
+    quest_qoi_k = func_wrapper(data.quest_qoi_k),
+    quest_qoi_mask = func_wrapper(data.quest_qoi_mask),
   )
   
 

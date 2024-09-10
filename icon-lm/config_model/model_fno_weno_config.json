@@ -1,0 +1,9 @@
+{
+  "n_modes": 16,
+  "hidden_channels": 512,
+  "in_channels": 2,
+  "out_channels": 1,
+  "n_layers": 4,
+  "cond_grid_idx_start": 2,
+  "cond_grid_idx_end": 3
+}

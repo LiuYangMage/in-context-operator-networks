@@ -2,35 +2,32 @@
 import pickle
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-import matplotlib.gridspec as gridspec
-import jax
-from jax.config import config
-import tensorflow as tf
-import os
-os.environ['XLA_PYTHON_CLIENT_PREALLOCATE'] = 'false'
-tf.config.set_visible_devices([], device_type='GPU')
-from collections import OrderedDict
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.gridspec as gridspec
 import pickle
-import matplotlib.patches as patches
+from absl import flags, app
 
 cmap_1 = 'Blues'
 cmap_2 = 'Reds'
 # cmap_1 = 'bwr'
 
 
-def calculate_error(pred, label, mask, order = 1):
+def calculate_error(pred, label, mask):
     '''
     pred: [batch, len, 1]
     label: [batch, len, 1]
-    mask: [batch, len]
+    mask: [batch, len], should be useless since no mask is used.
     '''
-    error = np.mean(np.abs(pred - label))
-    gt_norm_mean = np.mean(np.abs(label))
-    relative_error = error/gt_norm_mean
+    if FLAGS.error_mode == "l1":
+      error = np.mean(np.abs(pred - label))
+      gt_norm_mean = np.mean(np.abs(label))
+      relative_error = error/gt_norm_mean
+    elif FLAGS.error_mode == "l2":
+      error = np.sqrt(np.mean(np.square(pred - label), axis = (-2,-1))) # [batch]
+      error = np.mean(error)
+      gt_norm_mean = np.sqrt(np.mean(np.square(label), axis = (-2,-1))) # [batch]
+      gt_norm_mean = np.mean(gt_norm_mean)
+      relative_error = error/gt_norm_mean
     return error, relative_error
 
 def calculate_conservation_violation(pred, label, mask):
@@ -49,12 +46,15 @@ def calculate_conservation_violation(pred, label, mask):
 
 def get_error_from_dict(result_dict, key, demo_num):
     error, relative_error = calculate_error(result_dict[(*key, 'pred', demo_num, -1)], 
-                                            result_dict[(*key, 'ground_truth')], result_dict[(*key, 'mask')])
+                                            result_dict[(*key, 'ground_truth')], 
+                                            result_dict[(*key, 'mask')])
     return error, relative_error
 
 def get_consistency_error_from_dict(result_dict, consistency_dict, key, demo_num):
    forward = consistency_dict[(*key, 'forward', demo_num, -1)]
-   error, relative_error = calculate_error(forward, result_dict[(*key, 'cond_v')], result_dict[(*key, 'cond_mask')])
+   error, relative_error = calculate_error(forward, 
+                                           result_dict[(*key, 'cond_v')], 
+                                           result_dict[(*key, 'cond_mask')])
    return error, relative_error
 
 def get_violation_from_dict(result_dict, key, demo_num):
@@ -97,6 +97,7 @@ def get_average_error_list(result_dict, consistency_dict, a_range, b_range, c_ra
 def draw_decay(a_range, b_range, c_range, demo_num_list):
 
     plt.figure(figsize=(5, 4))
+    label_dict = {"l1": "$L_1$", "l2": "$L_2$"}
 
     folders = ["/home/shared/icon/analysis/icon_weno_20231213-111526",
                "/home/shared/icon/analysis/icon_weno_20231209-222440",
@@ -120,9 +121,9 @@ def draw_decay(a_range, b_range, c_range, demo_num_list):
     plt.xticks(demo_num_list)
     plt.ylabel('average error')
     plt.legend()
-    plt.title('Forward Error')
+    plt.title('Forward {} Error'.format(label_dict[FLAGS.error_mode]))
     plt.tight_layout()
-    plt.savefig(f'{folder}/decay_forward.pdf')
+    plt.savefig(f'{folder}/decay_forward_{FLAGS.error_mode}.pdf')
     plt.close('all')
 
 
@@ -139,12 +140,12 @@ def draw_decay(a_range, b_range, c_range, demo_num_list):
     plt.xticks(demo_num_list)
     plt.ylabel('average error')
     plt.legend()
-    plt.title('Reverse Error')
+    plt.title('Reverse {} Error'.format(label_dict[FLAGS.error_mode]))
     plt.tight_layout()
-    plt.savefig(f'{folder}/decay_reverse.pdf')
+    plt.savefig(f'{folder}/decay_reverse_{FLAGS.error_mode}.pdf')
     plt.close('all')
 
-if __name__ == "__main__":
+def main(argv):
   demo_num_list = [1,2,3,4,5]
 
   a_range = np.linspace(-1, 1, 11)
@@ -153,3 +154,7 @@ if __name__ == "__main__":
 
   draw_decay(a_range = a_range, b_range=b_range, c_range=c_range, demo_num_list=demo_num_list)
 
+if __name__ == '__main__':
+  FLAGS = flags.FLAGS
+  flags.DEFINE_string('error_mode', 'l1', 'error mode')
+  app.run(main)

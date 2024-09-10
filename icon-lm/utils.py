@@ -194,6 +194,8 @@ class TicToc:
     self.end_time[name] = time.perf_counter()
     total_time = self.end_time[name] - self.start_time[name]
     print(f'{name} Took {total_time:.4f} seconds', flush = True)
+  def get_time(self, name):
+    return self.end_time[name] - self.start_time[name]
   def estimate_time(self, name, ratio, samples_processed = None, timezone_str='America/Los_Angeles'):
     print('==========================Time Estimation Starts==========================')
     timezone = pytz.timezone(timezone_str)

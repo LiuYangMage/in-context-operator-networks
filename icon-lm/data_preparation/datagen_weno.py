@@ -127,10 +127,12 @@ def main(argv):
   if not os.path.exists(FLAGS.dir):
     os.makedirs(FLAGS.dir)
   
+  logging.info("Start!")
   if 'weno_cubic' in FLAGS.eqn_types:
     generate_conservation_weno_cubic(
           seed = FLAGS.seed, eqns = FLAGS.eqns, quests = FLAGS.quests, length = FLAGS.length, steps = 1000,
           dt = FLAGS.dt, num = FLAGS.num, name = name, eqn_mode = FLAGS.eqn_mode)
+  logging.info("End!")
 
 if __name__ == "__main__":
 
