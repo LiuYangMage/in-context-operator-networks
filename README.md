@@ -26,17 +26,15 @@ Moreover, we introduce a novel approach, namely "ICON-LM", to train a language-m
 
 By bridging language models with operator learning and data-driven differential equation solvers, we have not only achieved substantial advancements in this specific domain, but also opened up a new avenue for the application of language models in scientific machine learning, a realm that remains largely under-explored.
 
-See the paper for more details:
-https://arxiv.org/pdf/2308.05061.pdf. Code are in folder `icon-lm/`. See more details in `icon-lm/README.md`.
+See the [paper](https://arxiv.org/pdf/2308.05061.pdf) for more details. Code are in folder `icon-lm/`. See more details in `icon-lm/README.md`.
 
 ## PDE Generalization of In-Context Operator Networks: A Study on 1D Scalar Nonlinear Conservation Laws
 
 In this paper, we present a detailed methodology for solving PDE problems with ICON, and show how a single ICON model can make forward and reverse predictions for different equations with different strides, provided with appropriately designed data prompts. This is exemplified through a study on 1D scalar nonlinear conservation laws, a family of PDEs with temporal evolution. 
 
-We show the positive evidence that ICON can generalize well to PDEs with new forms without any fine-tuning. In particular, an ICON model trained on conservation laws with cubic flux functions can generalize well to some other flux functions of more general forms, without fine-tuning.
+We show the positive evidence that ICON can generalize well to PDEs with new forms without any fine-tuning. In particular, an ICON model trained on conservation laws with cubic flux functions can generalize well to some other flux functions of more general forms, without fine-tuning. We also showed prompt engineer techniques to broaden the range of problems that an ICON model can address.
 
-See the paper for more details:
-https://arxiv.org/pdf/2401.07364.pdf. Code are in folder `icon-lm/`. See more details in `icon-lm/README.md`.
+See the [paper](https://www.sciencedirect.com/science/article/pii/S0021999124006272) for more details. Code are in folder `icon-lm/`. See more details in `icon-lm/README.md`.
 
 ## Reference:
 ```
@@ -59,10 +57,15 @@ https://arxiv.org/pdf/2401.07364.pdf. Code are in folder `icon-lm/`. See more de
 }
 
 @article{yang2024pde,
-  title={PDE Generalization of In-Context Operator Networks: A Study on 1D Scalar Nonlinear Conservation Laws},
+  title={{PDE} Generalization of In-Context Operator Networks: A Study on {1D} Scalar Nonlinear Conservation Laws},
   author={Yang, Liu and Osher, Stanley J},
-  journal={arXiv preprint arXiv:2401.07364},
-  year={2024}
+  journal = {Journal of Computational Physics},
+  volume = {519},
+  pages = {113379},
+  year = {2024},
+  issn = {0021-9991},
+  doi = {https://doi.org/10.1016/j.jcp.2024.113379},
+  url = {https://www.sciencedirect.com/science/article/pii/S0021999124006272},
 }
 ```
 
