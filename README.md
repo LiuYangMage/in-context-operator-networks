@@ -2,6 +2,9 @@
 
 This repository contains the code for the following papers. Feel free to star this repository and cite our papers if you find it useful for your research. You can find the citation details below.
 
+This repository serves solely as an archive and is not actively maintained. For tutorial code, please refer to our other repository at [https://github.com/scaling-group/icon-tutorial](https://github.com/scaling-group/icon-tutorial). Also, see [our website](https://scaling-group.github.io/research/) for latest updates on ICON and other projects. 
+
+
 ## In-Context Operator Learning with Data Prompts for Differential Equation Problems 
 
 This paper aims to answer the following question: Can we build a large model for broad spectrum of scientific machine learning tasks, just as large language models (LLM) like GPT for natural language processing (NLP)?
@@ -51,7 +54,7 @@ See the [paper](https://www.sciencedirect.com/science/article/pii/S0021999124006
 
 @article{yang2023FineTune,
   title={Fine-Tune Language Models as Multi-Modal Differential Equation Solvers},
-  author={Yang, Liu and Meng, Tingwei and Liu, Siting and Osher, Stanley J},
+  author={Yang, Liu and Liu, Siting and Osher, Stanley J},
   journal={arXiv preprint arXiv:2308.05061},
   year={2023}
 }
