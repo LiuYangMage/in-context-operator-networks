@@ -4,6 +4,7 @@ This repository contains the code for the following papers. Feel free to star th
 
 This repository serves solely as an archive and is not actively maintained. For tutorial code, please refer to our other repository at [https://github.com/scaling-group/icon-tutorial](https://github.com/scaling-group/icon-tutorial). Also, see [our website](https://scaling-group.github.io/research/) for latest updates on ICON and other projects. 
 
+🚀 Check out [**icon-core**](https://github.com/scaling-group/icon-core) on GitHub, the open-source infrastructure package for your ICON development, featuring built-in AI support, modular implementations, training pipelines, and examples to get you started.
 
 ## In-Context Operator Learning with Data Prompts for Differential Equation Problems 
 
